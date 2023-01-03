@@ -106,7 +106,7 @@ const data = [
 
 const Products = () => {
   return (
-    <div className="products-section container mx-auto py-10 bg-gray-100">
+    <div className="products-section container mx-auto py-10">
       <div className="section-title uppercase text-2xl font-bold text-center mb-10">
         <h1>browse all products</h1>
       </div>

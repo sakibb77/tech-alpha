@@ -48,11 +48,13 @@ const data = [
 const Slider = () => {
   const [currrentSlide, setCurrentSlide] = useState(0);
 
+  //prev slide btn handler
   const prevSlide = () => {
     setCurrentSlide(
       currrentSlide === 0 ? data.length - 1 : (prevSlide) => prevSlide - 1
     );
   };
+  //next slide btn handler
   const nextSlide = () => {
     setCurrentSlide(
       currrentSlide === data.length - 1 ? 0 : (prevSlide) => prevSlide + 1
