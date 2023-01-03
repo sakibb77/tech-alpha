@@ -110,7 +110,7 @@ const Products = () => {
       <div className="section-title uppercase text-2xl font-bold text-center mb-10">
         <h1>browse all products</h1>
       </div>
-      <div className="products-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center px-5 md:px-0">
+      <div className="products-wrapper grid  gap-10 justify-items-center px-5 md:px-0">
         {data.map((product) => (
           <Card key={product.id} product={product} />
         ))}
