@@ -1,4 +1,5 @@
 import React from "react";
+import { currencyFormatter } from "../utilities/currencyFormatter";
 
 const Cart = ({ product }) => {
   return (
@@ -16,7 +17,7 @@ const Cart = ({ product }) => {
         <p className="details text-gray-500 h-[6rem]">{product.description}</p>
         <div className="flex justify-between items-center">
           <span className="price text-xl font-semibold text-orange-500">
-            ${product.price}
+            {currencyFormatter(product.price)}
           </span>
           <button className="uppercase bg-violet-500 text-sm md:text-base text-violet-50 font-medium p-2 px-4 md:p-3 md:px-7 rounded-md hover:bg-orange-500 hover:text-orange-50 duration-300 shadow-lg shadow-violet-300 hover:shadow-orange-300">
             add to cart
