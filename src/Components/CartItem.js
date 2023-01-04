@@ -21,7 +21,7 @@ const CartItem = ({ item }) => {
       <div className="cart-item-price">
         <p>{currencyFormatter(item.price)}</p>
       </div>
-      <div className="cart-item-quantity text-lg flex border">
+      <div className="cart-item-quantity text-lg flex">
         <button className="h-8 w-7 bg-gray-100 border border-gray-300 active:bg-gray-700 active:text-gray-50">
           -
         </button>
