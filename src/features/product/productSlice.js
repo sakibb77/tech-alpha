@@ -23,17 +23,17 @@ const productSlice = createSlice({
   extraReducers: (builder) => {
     //if product fetching pending
     builder.addCase(productFetching.pending, (state, action) => {
-      state.status = "pending";
+      state.status = "loading...";
     });
 
     //if product fetching fulfilled
     builder.addCase(productFetching.fulfilled, (state, action) => {
-      state.status = "fulfilled";
+      state.status = "";
       state.items = action.payload;
     });
     //if product fetching rejected
     builder.addCase(productFetching.rejected, (state, action) => {
-      state.status = "rejected";
+      state.status = "something went wrong";
     });
   },
 });

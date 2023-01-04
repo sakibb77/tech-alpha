@@ -13,6 +13,8 @@ const Products = () => {
       </div>
 
       <div className="products-wrapper grid  gap-10 justify-items-center px-5 md:px-0">
+        {status && <p>{status}</p>}
+
         {data.map((product) => (
           <Card key={product.id} product={product} />
         ))}
