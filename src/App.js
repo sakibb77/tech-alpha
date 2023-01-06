@@ -5,11 +5,15 @@ import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Footer from "./Components/Footer";
 import NotFound from "./pages/NotFound";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <div className="App min-h-screen bg-gray-50 text-gray-700">
       <Navbar />
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />

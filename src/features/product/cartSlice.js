@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
   cartItems: localStorage.getItem("cartItems")
@@ -21,10 +22,30 @@ const cartSlice = createSlice({
       if (existedItemIndex >= 0) {
         //increase quantity
         state.cartItems[existedItemIndex].cartQuantity += 1;
+        toast.success("quantity increased!", {
+          position: "bottom-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       } else {
         //add to cart
         const assembledItem = { ...action.payload, cartQuantity: 1 };
         state.cartItems.push(assembledItem);
+        toast.success("Product added!", {
+          position: "bottom-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       }
       //add to localstorage
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -35,6 +56,16 @@ const cartSlice = createSlice({
         (item) => item.id !== action.payload.id
       );
       state.cartItems = updatedCartItems;
+      toast.error("Product removed!", {
+        position: "bottom-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
 
       //add to localstorage
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -42,6 +73,16 @@ const cartSlice = createSlice({
 
     clearFromCart(state, action) {
       state.cartItems = [];
+      toast.error("cart cleared!", {
+        position: "bottom-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
       //add to localstorage
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
@@ -54,12 +95,33 @@ const cartSlice = createSlice({
       //if exist
       if (state.cartItems[itemIndex].cartQuantity > 1) {
         state.cartItems[itemIndex].cartQuantity -= 1;
+
+        toast.info("quantity decreased!", {
+          position: "bottom-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       } else if (state.cartItems[itemIndex].cartQuantity === 1) {
         const updatedCartItems = state.cartItems.filter(
           (item) => item.id !== action.payload.id
         );
 
         state.cartItems = updatedCartItems;
+        toast.error("Product removed!", {
+          position: "bottom-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       }
 
       //add to localstorage
