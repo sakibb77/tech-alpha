@@ -4,7 +4,6 @@ import Card from "../Components/Card";
 
 const Products = () => {
   const { items: data, status } = useSelector((state) => state.product);
-  console.log(data);
 
   return (
     <div className="products-section min-h-screen container mx-auto py-10">

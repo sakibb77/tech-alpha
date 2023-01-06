@@ -1,7 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCart, decreaseQuantity } from "../features/product/cartSlice";
 import { currencyFormatter } from "../utilities/currencyFormatter";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, handleRemove }) => {
+  const dispatch = useDispatch();
+
+  const handleDecrease = (product) => {
+    dispatch(decreaseQuantity(product));
+  };
+  const handleIncrease = (product) => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <div
       key={item.id}
@@ -13,7 +24,10 @@ const CartItem = ({ item }) => {
         </div>
         <div className="cart-item-text flex flex-col gap-2 items-start">
           <p className="">{item.name}</p>
-          <button className="uppercase text-gray-400 hover:text-rose-500 duration-300">
+          <button
+            onClick={() => handleRemove(item)}
+            className="uppercase text-gray-400 hover:text-rose-500 duration-300"
+          >
             remove
           </button>
         </div>
@@ -22,13 +36,19 @@ const CartItem = ({ item }) => {
         <p>{currencyFormatter(item.price)}</p>
       </div>
       <div className="cart-item-quantity text-lg flex">
-        <button className="h-8 w-7 bg-gray-100 border border-gray-300 active:bg-gray-700 active:text-gray-50">
+        <button
+          onClick={() => handleDecrease(item)}
+          className="h-8 w-7 bg-gray-100 border border-gray-300 active:bg-gray-700 active:text-gray-50"
+        >
           -
         </button>
         <span className="h-8 w-10 flex justify-center items-center bg-gray-100 border border-gray-300 ">
-          1
+          {item.cartQuantity}
         </span>
-        <button className="h-8 w-7 bg-gray-100 border border-gray-300 active:bg-gray-700 active:text-gray-50">
+        <button
+          onClick={() => handleIncrease(item)}
+          className="h-8 w-7 bg-gray-100 border border-gray-300 active:bg-gray-700 active:text-gray-50"
+        >
           +
         </button>
       </div>

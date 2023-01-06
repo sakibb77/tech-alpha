@@ -1,11 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addToCart } from "../features/product/cartSlice";
 import { currencyFormatter } from "../utilities/currencyFormatter";
 
-const Cart = ({ product }) => {
+const Card = ({ product }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   //add to cart handler
-  const addToCartHandler = (id) => {
+  const addToCartHandler = (product) => {
+    dispatch(addToCart(product));
+
     navigate("/cart");
   };
 
@@ -27,7 +32,7 @@ const Cart = ({ product }) => {
             {currencyFormatter(product.price)}
           </span>
           <button
-            onClick={() => addToCartHandler(product.id)}
+            onClick={() => addToCartHandler(product)}
             className="uppercase bg-violet-500 text-sm md:text-base text-violet-50 font-medium p-2 px-4 md:p-3 md:px-7 rounded-md hover:bg-orange-500 hover:text-orange-50 duration-300 shadow-lg shadow-violet-300 hover:shadow-orange-300"
           >
             add to cart
@@ -38,4 +43,4 @@ const Cart = ({ product }) => {
   );
 };
 
-export default Cart;
+export default Card;
