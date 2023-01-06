@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "../Components/CartItem";
-import { clearFromCart, removeFromCart } from "../features/product/cartSlice";
+import {
+  clearFromCart,
+  getSubTotal,
+  removeFromCart,
+} from "../features/product/cartSlice";
+import { currencyFormatter } from "../utilities/currencyFormatter";
 
 const Cart = () => {
-  const { cartItems: data } = useSelector((state) => state.cart);
+  const { cartItems: data, cartTotalAmount } = useSelector(
+    (state) => state.cart
+  );
   const dispatch = useDispatch();
 
   const handleRemove = (product) => {
@@ -16,10 +23,16 @@ const Cart = () => {
     dispatch(clearFromCart());
   };
 
+  useEffect(() => {
+    dispatch(getSubTotal());
+  }, [dispatch, data]);
+
   return (
     <div className="cart-section py-10 container mx-auto min-h-screen">
-      <h2 className="uppercase section-title text-2xl font-bold text-center tracking-widest mb-10">
-        {data.length === 0 ? "your cart is empty" : "SHOPPING CART"}
+      <h2 className="uppercase section-title text-2xl font-bold text-center tracking-wider mb-10">
+        {data.length === 0
+          ? "your cart is empty"
+          : `you have added ${data.length} item${data.length > 1 ? "s" : ""}`}
       </h2>
 
       {data.length === 0 && (
@@ -64,7 +77,9 @@ const Cart = () => {
             <div className="flex flex-col gap-3">
               <div className="sub-total-wrapper flex justify-between text-2xl">
                 <span className=" text-cyan-500 font-medium">Subtotal</span>
-                <span className="text-cyan-500 font-medium">$607.98</span>
+                <span className="text-cyan-500 font-medium">
+                  {currencyFormatter(cartTotalAmount)}
+                </span>
               </div>
               <p className="text-gray-400 text-lg">
                 Taxes and shipping costs are calculated at the checkout

@@ -53,7 +53,7 @@ const CartItem = ({ item, handleRemove }) => {
         </button>
       </div>
       <div className="cart-item-total justify-self-end">
-        <p>{currencyFormatter(item.price)}</p>
+        <p>{currencyFormatter(item.price * item.cartQuantity)}</p>
       </div>
     </div>
   );
