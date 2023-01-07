@@ -56,3 +56,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-flow: dense;
 }
+
+.category-wrapper {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+}

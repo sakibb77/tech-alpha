@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import Category from "./pages/Category";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/category/:name" element={<Category />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -9,7 +9,7 @@ const data = [
     headline: "DSLR cameras for stunning photos",
     body: "Are you an aspiring photographer looking to take your skills to the next level? Our DSLR cameras offer advanced features and high-quality image sensors to help you capture stunning photos. From landscape shots to portraits, these cameras are perfect for capturing all types of subjects.",
     cta: "Shop DSLR cameras now",
-    category: "cameras",
+    category: "Camera",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const data = [
     headline: "Upgrade your home entertainment with our TVs",
     body: "Experience the latest in home entertainment with our selection of TVs. From sleek and modern designs to advanced features like 4K resolution and smart capabilities, our TVs will bring your favorite movies, TV shows, and streaming content to life.",
     cta: "Shop TVs and upgrade now",
-    category: "tvs",
+    category: "TV",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const data = [
     headline: "Enhance your listening experience",
     body: "Take your music, movies, and more to the next level with our headphones. Our selection offers a range of styles and features, including noise-cancelling technology, wireless connectivity, and comfortable designs for all-day wear.",
     cta: "Experience enhanced sound",
-    category: "headphones",
+    category: "Headphones",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const data = [
     headline: "Take your gaming to the next level",
     body: "Elevate your gaming experience with our selection of gaming consoles. From the latest models to classic systems, we have a console for every type of gamer. Our consoles offer advanced graphics, fast processing speeds, and a variety of exclusive games to choose from.",
     cta: "Shop consoles and play now",
-    category: "consoles",
+    category: "Console",
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const data = [
     headline: "Stay connected with smart watches",
     body: "Stay connected and on top of your day with our smart watches. Our selection offers a range of styles and features, including fitness tracking, phone notifications, and voice assistants. These watches are the perfect combination of functionality and style.",
     cta: "Connect with a smart watch",
-    category: "smart-watches",
+    category: "Smart Watches",
   },
 ];
 
@@ -71,15 +71,15 @@ const Slider = () => {
           <Slide slide={slide} key={slide.id} />
         ))}
       </div>
-      <div className="btns w-fit m-auto absolute z-[1] left-0 right-0 bottom-20 text-white flex gap-10 justify-center text-2xl">
+      <div className="btns w-[90%] lg:w-fit mx-auto absolute z-[1] left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2  lg:bottom-20 lg:top-[80%] text-white flex gap-10 justify-between items-center text-2xl">
         <button
-          className="prev-btn h-14 w-20 bg-gray-700/50 shadow-sm  shadow-black/30 backdrop-blur-sm hover:bg-gray-800/50 flex items-center justify-center hover:text-black/60 duration-300 border border-gray-500"
+          className="prev-btn h-8 w-12  lg:h-14 lg:w-20  text-sm lg:text-lg bg-gray-700/50 shadow-sm shadow-black/30 backdrop-blur-sm hover:bg-gray-800/50 flex items-center justify-center hover:text-black/60 duration-300 border border-gray-500"
           onClick={prevSlide}
         >
           <BsArrowLeft />
         </button>
         <button
-          className="next-btn h-14 w-20 p-3 bg-gray-700/50 shadow-sm backdrop-blur-sm hover:bg-gray-800/50 flex items-center justify-center hover:text-black/60 duration-300 border border-gray-500"
+          className="next-btn h-8 w-12  lg:h-14 lg:w-20  bg-gray-700/50 shadow-sm  text-sm lg:text-lg backdrop-blur-sm hover:bg-gray-800/50 flex items-center justify-center hover:text-black/60 duration-300 border border-gray-500"
           onClick={nextSlide}
         >
           <BsArrowRight />

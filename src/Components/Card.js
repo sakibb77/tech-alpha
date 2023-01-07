@@ -15,7 +15,7 @@ const Card = ({ product }) => {
   };
 
   return (
-    <div className="product flex flex-col gap-2 bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
+    <div className="product flex flex-col gap-2 bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden max-w[280px]">
       <div className="img w-[80%] m-auto">
         <img src={product.image} alt={product.name} />
       </div>
