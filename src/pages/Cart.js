@@ -28,8 +28,8 @@ const Cart = () => {
   }, [dispatch, data]);
 
   return (
-    <div className="cart-section py-10 px-2  container mx-auto min-h-screen">
-      <h2 className="uppercase section-title text-lg md:text-xl lg:text-2xl font-bold text-center tracking-wider mb-10">
+    <div className="cart-section py-6 md:py-10 px-4  container mx-auto min-h-screen">
+      <h2 className="uppercase section-title text-lg md:text-xl lg:text-2xl font-bold text-center tracking-wide mb-6 md:mb-10">
         {data.length === 0
           ? "your cart is empty"
           : `you have added ${data.length} item${data.length > 1 ? "s" : ""}`}
@@ -39,7 +39,7 @@ const Cart = () => {
         <div className="flex items-center justify-center">
           <Link
             to={"/products"}
-            className=" text-violet-50 bg-orange-500 text-xl p-3 px-7 rounded-lg  font-medium capitalize group relative flex justify-center gap-3"
+            className=" text-violet-50 bg-orange-500 text-base md:text-xl p-3 px-7 rounded-lg  font-medium capitalize group relative flex justify-center gap-3"
           >
             <span className="duration-100">←</span>
             <span>continue shopping</span>
@@ -84,12 +84,12 @@ const Cart = () => {
               <p className="text-gray-400 text-lg text-center md:text-start">
                 Taxes and shipping costs are calculated at the checkout
               </p>
-              <button className="uppercase bg-cyan-500 py-3 text-lg md:text-xl text-cyan-50 hover:bg-gray-700 hover:text-gray-50 duration-300">
+              <button className="uppercase bg-cyan-500 py-2 md:py-3 text-lg md:text-xl text-cyan-50 hover:bg-gray-700 hover:text-gray-50 duration-300">
                 checkout
               </button>
               <Link
                 to={"/products"}
-                className="text-cyan-500 text-xl self-start font-medium capitalize group relative flex gap-3"
+                className="text-cyan-500 text-base md:text-xl self-start font-medium capitalize group relative flex gap-3"
               >
                 <span className="duration-100">←</span>
                 <span>continue shopping</span>

@@ -7,8 +7,8 @@ const Navbar = () => {
   const { cartItems } = useSelector((state) => state.cart);
 
   return (
-    <div className="bg-violet-700 text-violet-50 h-20 flex items-center justify-center">
-      <div className="navbar container mx-auto flex items-center justify-between">
+    <div className="bg-violet-700 text-violet-50 h-20 flex items-center justify-center px-6 xl:px-0">
+      <div className="navbar container mx-auto flex items-center justify-around md:justify-between">
         <div className="logo">
           <span className="text-xl font-semibold select-none">
             tech<span className="text-orange-500">alfa</span>

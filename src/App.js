@@ -12,7 +12,7 @@ import Category from "./pages/Category";
 
 function App() {
   return (
-    <div className="App min-h-screen bg-gray-50 text-gray-700">
+    <div className="App min-h-screen bg-gray-50 text-gray-700 overflow-x-hidden  ">
       <Navbar />
       <ToastContainer className="w-2/3 md:w-[230px] text-sm md:text-base " />
       <Routes>

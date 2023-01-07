@@ -16,14 +16,14 @@ const CartItem = ({ item, handleRemove }) => {
   return (
     <div
       key={item.id}
-      className="cart-item grid  md:grid-cols-6 auto-rows-min  md:h-auto items-start md:items-center border-b border-gray-200 pb-2"
+      className="cart-item grid  md:grid-cols-6 auto-rows-min  md:h-auto items-start md:items-center border-b border-gray-200 pb-2 gap-y-2"
     >
       <div className="cart-left col-span-2 md:col-span-3 flex items-start md:items-center gap-3 md:gap-8">
         <div className="cart-item-img w-16 h-16 md:w-32 md:h-32 row-span-3">
           <img src={item.image} alt="" className="object-cover h-full w-full" />
         </div>
         <div className="cart-item-text flex flex-col gap-2 items-start">
-          <p className="text-xs md:text-base">{item.name}</p>
+          <p className="text-sm md:text-base">{item.name}</p>
           <button
             onClick={() => handleRemove(item)}
             className="uppercase text-xs md:text-base font-semibold text-rose-400 md:hover:text-rose-500 duration-300 md:text-gray-400"

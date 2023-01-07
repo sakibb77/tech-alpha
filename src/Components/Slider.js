@@ -37,7 +37,7 @@ const data = [
   },
   {
     id: 5,
-    src: "https://i.ibb.co/YbS7mL2/smart-watches.jpg",
+    src: "https://i.ibb.co/KLhZZWp/smart-watch.jpg",
     headline: "Stay connected with smart watches",
     body: "Stay connected and on top of your day with our smart watches. Our selection offers a range of styles and features, including fitness tracking, phone notifications, and voice assistants. These watches are the perfect combination of functionality and style.",
     cta: "Connect with a smart watch",
