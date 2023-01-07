@@ -24,7 +24,7 @@ const cartSlice = createSlice({
         state.cartItems[existedItemIndex].cartQuantity += 1;
         toast.success("quantity increased!", {
           position: "bottom-left",
-          autoClose: 3000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -38,7 +38,7 @@ const cartSlice = createSlice({
         state.cartItems.push(assembledItem);
         toast.success("Product added!", {
           position: "bottom-left",
-          autoClose: 3000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -58,7 +58,7 @@ const cartSlice = createSlice({
       state.cartItems = updatedCartItems;
       toast.error("Product removed!", {
         position: "bottom-left",
-        autoClose: 3000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -75,7 +75,7 @@ const cartSlice = createSlice({
       state.cartItems = [];
       toast.error("cart cleared!", {
         position: "bottom-left",
-        autoClose: 3000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -98,7 +98,7 @@ const cartSlice = createSlice({
 
         toast.info("quantity decreased!", {
           position: "bottom-left",
-          autoClose: 3000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -114,7 +114,7 @@ const cartSlice = createSlice({
         state.cartItems = updatedCartItems;
         toast.error("Product removed!", {
           position: "bottom-left",
-          autoClose: 3000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

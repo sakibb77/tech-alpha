@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App min-h-screen bg-gray-50 text-gray-700">
       <Navbar />
-      <ToastContainer />
+      <ToastContainer className="w-2/3 md:w-[230px] text-sm md:text-base " />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />

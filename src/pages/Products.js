@@ -7,7 +7,7 @@ const Products = () => {
 
   return (
     <div className="products-section min-h-screen container mx-auto py-10">
-      <div className="section-title uppercase text-2xl font-bold text-center mb-10">
+      <div className="section-title uppercase text-lg md:text-xl lg:text-2xl font-bold text-center mb-10">
         <h1>browse all products</h1>
       </div>
 

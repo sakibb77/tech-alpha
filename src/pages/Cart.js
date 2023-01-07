@@ -28,8 +28,8 @@ const Cart = () => {
   }, [dispatch, data]);
 
   return (
-    <div className="cart-section py-10 container mx-auto min-h-screen">
-      <h2 className="uppercase section-title text-2xl font-bold text-center tracking-wider mb-10">
+    <div className="cart-section py-10 px-2  container mx-auto min-h-screen">
+      <h2 className="uppercase section-title text-lg md:text-xl lg:text-2xl font-bold text-center tracking-wider mb-10">
         {data.length === 0
           ? "your cart is empty"
           : `you have added ${data.length} item${data.length > 1 ? "s" : ""}`}
@@ -50,13 +50,13 @@ const Cart = () => {
       {data.length > 0 && (
         <>
           <div className="cart-container">
-            <div className="headline grid grid-cols-6 uppercase text-sm tracking-widest border-b font-medium pb-4">
+            <div className="headline hidden md:grid grid-cols-6 uppercase text-sm tracking-widest border-b border-gray-200 font-medium pb-4">
               <p className="col-span-3">product</p>
               <p>price</p>
               <p>quantity</p>
               <p className="justify-self-end">total</p>
             </div>
-            <div className="cart-item-wrapper flex flex-col gap-5">
+            <div className="cart-item-wrapper flex flex-col gap-2 md:gap-5">
               {data?.map((item) => (
                 //render cart item
                 <CartItem
@@ -67,24 +67,24 @@ const Cart = () => {
               ))}
             </div>
           </div>
-          <div className="cart-lower flex justify-between pt-10">
+          <div className="cart-lower justify-center gap-3 flex flex-col-reverse md:flex-row  md:justify-between items-center pt-10">
             <button
               onClick={() => cartClearHandler()}
-              className="p-3 px-6 uppercase bg-rose-100 text-rose-500 border border-rose-600 self-start tracking-wider font-medium hover:bg-rose-500 hover:text-rose-50 duration-300"
+              className="p-1 px-3 md:p-3 md:px-6 uppercase bg-rose-100 text-rose-500 border border-rose-600 md:self-start tracking-wider font-medium hover:bg-rose-500 hover:text-rose-50 duration-300"
             >
               clear cart
             </button>
             <div className="flex flex-col gap-3">
-              <div className="sub-total-wrapper flex justify-between text-2xl">
+              <div className="sub-total-wrapper flex justify-between text-lg md:text-2xl">
                 <span className=" text-cyan-500 font-medium">Subtotal</span>
                 <span className="text-cyan-500 font-medium">
                   {currencyFormatter(cartTotalAmount)}
                 </span>
               </div>
-              <p className="text-gray-400 text-lg">
+              <p className="text-gray-400 text-lg text-center md:text-start">
                 Taxes and shipping costs are calculated at the checkout
               </p>
-              <button className="uppercase bg-cyan-500 py-3 text-xl text-cyan-50 hover:bg-gray-700 hover:text-gray-50 duration-300">
+              <button className="uppercase bg-cyan-500 py-3 text-lg md:text-xl text-cyan-50 hover:bg-gray-700 hover:text-gray-50 duration-300">
                 checkout
               </button>
               <Link
