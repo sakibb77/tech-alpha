@@ -15,7 +15,7 @@ Foodverse is a recipe ingredient management app built with React, TailwindCSS, a
 - JavaScript: A high-level, interpreted programming language
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/[your-username]/foodverse.git`
+1. Clone the repository: `git clone https://github.com/sakibb77/foodverse.git`
 2. Navigate to the project directory: `cd foodverse`
 3. Install dependencies: `npm install` or `yarn install`
 4. Start the development server: `npm start` or `yarn start`
