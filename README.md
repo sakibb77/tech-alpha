@@ -3,8 +3,6 @@
 Foodverse is a recipe ingredient management app built with React, TailwindCSS, and JavaScript. With this app, you can keep track of all the ingredients you have in your kitchen, and build recipes with the ingredients you already have on hand. Foodverse streamlines the recipe building process with a modern, intuitive interface and makes it easy to stay organized and save time in the kitchen.
 
 ## Features
-- Create and manage a list of ingredients
-- Build and save custom recipes
 - Browse and discover new recipes
 - Store ingredients and cooking instructions in a clean, organized manner
 - Modern, intuitive interface
@@ -22,7 +20,4 @@ Foodverse is a recipe ingredient management app built with React, TailwindCSS, a
 
 ## Contributing
 Foodverse is an open-source project, and contributions are welcome! If you're interested in contributing, please take a look at the [contributing guidelines](CONTRIBUTING.md).
-
-## License
-Foodverse is licensed under the [MIT License](LICENSE).
 
